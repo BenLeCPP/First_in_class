@@ -20,6 +20,8 @@ void Menu()
 void Game()
 {
    int trueNumber, userGuess, attempt = 0;
+   time_t t;
+   srand((unsigned) time(&t));
    int max =10;
    trueNumber = rand() % max + 1;
    int choice;
