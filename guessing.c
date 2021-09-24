@@ -1,14 +1,19 @@
-/* IN this part, I will ask the user to choose 3 options  
+/* IN this part, I will ask the user to choose 3 options:
+Option 1: user will be able to start the game and guess a number from 1 to 10.
+Option 2: user can choose a different max number and continue playing the game.
+OPtion 3: user can choose to quit the game.
+ 
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-void guessing(int max)
+int main (void)
 {
     int trueNumber, userGuess, attempt = 0;
+    int max =10;
 
-    trueNumber = rand() % max;
+    trueNumber = rand() % max + 1;
     printf("Welcome to the Guessing Number Game!\n");
     printf("Press 1 to play a game\n");
     printf("Press 2 to change the max number\n");
@@ -27,21 +32,21 @@ void guessing(int max)
 
             do 
             {
+                attempt++;
                 scanf("%d", &userGuess);
                 if (userGuess > trueNumber)
                 {
                     printf("Please guess a lower number\n");
-                    attempt++;
                 }
                 else if (userGuess < trueNumber)
                 {
                     printf("Please guess a higher number\n");
-                    attempt++;
+                    
                 }
                 else if (userGuess == trueNumber)
                 {
                     printf("You guessed the correct number in %d" " times\n", attempt);
-                    attempt++;
+                    
                 }
                 else
                 {
@@ -94,12 +99,5 @@ void guessing(int max)
         break;
 
     }
-
-}
-
-int main()
-{
-    int max = 10;
-    guessing(10);
     return 0;
 }
