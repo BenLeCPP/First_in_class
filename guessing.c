@@ -49,7 +49,9 @@ void Game()
             else if (userGuess == trueNumber)
             {
                 printf("You guessed the correct number in %d" " times\n", attempt);
-                    
+                printf("");
+                Menu();
+                Game(); 
             }
             else
             {
@@ -86,6 +88,9 @@ void Game()
                     {
                         printf("You guessed the correct number in %d" " times\n", attempt);
                         attempt++;
+                        printf("");
+                        Menu();
+                        Game();
                     }
                 else
                     {
@@ -104,12 +109,13 @@ void Game()
 
     case 3: 
         printf("You chose to quit the game!\n");
-        printf("Thank you for playing and see you again!");
+        printf("Thank you for playing and see you again!\n");
         break;
  
    }
         
 }
+
 
 int main()
 {
