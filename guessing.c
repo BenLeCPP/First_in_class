@@ -68,7 +68,6 @@ void Game()
         printf("Please enter the max number you want\n");
         scanf("%d", &max);
         printf("Your new max number is %d\n", max);
-        again:
         printf("Guess a number between " "1 and %d\n", max);
         
         if(0< max && max <100 & max >= trueNumber)
@@ -91,24 +90,7 @@ void Game()
                         printf("You guessed the correct number in %d" " times\n", attempt);
                         attempt++;
                         printf("");
-                        switch(choice)
-                        {
-                        case 1:
-                            scanf("%d", &choice);
-                            printf("You chose %d\n", choice);
-                            goto again;
-                            break;
-                        
-                        case 2 :
-                            Game();
-                            break;
-                        
-                        case 3:
-                           printf("You chose to quit the game!\n");
-                           printf("Thank you for playing and see you again!\n");
-                           break; 
-                        
-                        }
+                        Game();
                         
                     }
                 else
